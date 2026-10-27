@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Alkarub · Página não encontrada</title>
+<script>
+(function(){
+  var p = location.pathname.replace(/\/+$/, "");
+  if (p === "/en" || p === "/en/index.html") { location.replace("/en.html" + location.hash); }
+  else if (p === "/pt" || p === "/pt/index.html") { location.replace("/" + location.hash); }
+  else {
+    var q = p.toLowerCase(), m = {"/our-story":"/#historia","/shop":"/#produtos","/blog":"/blog.html","/en/blog":"/en-blog.html"};
+    if (m[q]) { location.replace(m[q]); }
+    else if (q.indexOf("/post/") === 0 || q.indexOf("/blog/") === 0) { location.replace("/blog.html"); }
+  }
+})();
+</script>
+<style>
+body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#F2E8DA;color:#3A2A18;font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;text-align:center;padding:24px}
+h1{font-family:Georgia,"Times New Roman",serif;font-size:2rem;margin:0 0 8px}
+a{display:inline-block;margin:6px;padding:10px 20px;border-radius:999px;background:#6B4A2E;color:#fff;text-decoration:none;font-weight:600}
+</style>
+</head>
+<body>
+<main>
+<h1>Página não encontrada</h1>
+<p>Esta morada não existe. Vá para a página inicial.</p>
+<a href="/">Alkarub (PT)</a><a href="/en.html">Alkarub (EN)</a>
+</main>
+</body>
+</html>
