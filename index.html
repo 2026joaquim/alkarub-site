@@ -38,7 +38,7 @@
   --f-original:#6B5234;
   --f-alecrim:#5B6536;
   --f-hortela:#3F7A5E;
-  --f-laranja:#D07A2A;
+  --f-laranja:#D07A2A; --f-chai:#A8483A;
   --display:"Young Serif", Georgia, "Times New Roman", serif;
   --body:"Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
   --r:14px;
@@ -48,14 +48,14 @@
   :root:not([data-theme="light"]){
     --ground:#1D140D; --surface:#271C14; --sunk:#2B2818; --ink:#F3E9DC; --ink-soft:#C2AF98;
     --line:#3D2E20; --pod:#C99164; --pod-deep:#E3AC82; --olive:#A0AD6C; --ochre:#DE9D54; --on-pod:#1B120D;
-    --f-original:#B97A4E; --f-alecrim:#98A665; --f-hortela:#6DB38F; --f-laranja:#E8964A;
+    --f-original:#B97A4E; --f-alecrim:#98A665; --f-hortela:#6DB38F; --f-laranja:#E8964A; --f-chai:#C8604F;
     color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
   --ground:#1D140D; --surface:#271C14; --sunk:#2B2818; --ink:#F3E9DC; --ink-soft:#C2AF98;
   --line:#3D2E20; --pod:#C99164; --pod-deep:#E3AC82; --olive:#A0AD6C; --ochre:#DE9D54; --on-pod:#1B120D;
-  --f-original:#B97A4E; --f-alecrim:#98A665; --f-hortela:#6DB38F; --f-laranja:#E8964A;
+  --f-original:#B97A4E; --f-alecrim:#98A665; --f-hortela:#6DB38F; --f-laranja:#E8964A; --f-chai:#C8604F;
   color-scheme:dark;
 }
 *{box-sizing:border-box}
@@ -152,6 +152,10 @@ section{padding-block:clamp(64px,9vw,112px)}
 .pouch{height:170px;display:grid;place-items:center;background:color-mix(in srgb,var(--c) 12%,var(--surface));position:relative}
 .pouch svg{height:140px;width:auto}
 .flavor .body{padding:20px 20px 8px;display:grid;gap:6px}
+.flavor .ingr{font-size:.82rem!important}
+.pouch-img{padding:0;height:auto;display:block;overflow:hidden}.pouch-img img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.flavor.feature{grid-column:1/-1;display:grid;grid-template-columns:minmax(220px,340px) 1fr;grid-template-rows:auto 1fr}.flavor.feature .pouch{grid-row:1/3;grid-column:1;min-height:320px}.flavor.feature .body{grid-column:2;padding:28px 28px 8px;align-content:start}.flavor.feature .body h3{font-size:1.6rem}.flavor.feature .formats{grid-column:2;align-self:end}
+@media (max-width:700px){.flavor.feature{grid-template-columns:1fr;grid-template-rows:auto}.flavor.feature .pouch,.flavor.feature .body,.flavor.feature .formats{grid-column:1;grid-row:auto}.flavor.feature .pouch{min-height:0;height:430px}}
 .flavor .body p{font-size:.93rem;color:var(--ink-soft)}
 .flavor .tag{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--c)}
 .formats{list-style:none;margin:0;padding:8px 20px 20px;display:grid;gap:0}
@@ -520,6 +524,7 @@ form.fields .full{grid-column:1/-1}
         <h3>Original</h3>
         <p>Alfarroba pura, seca e moída. Doce, com notas de cacau e rica em antioxidantes.</p>
         
+        
       </div>
       <ul class="formats">
         <li>
@@ -552,6 +557,7 @@ form.fields .full{grid-column:1/-1}
         <span class="tag">Alfarroba + alecrim</span>
         <h3>Alecrim</h3>
         <p>85% alfarroba, 15% alecrim. O aroma herbal do alecrim com a doçura da alfarroba.</p>
+        
         
       </div>
       <ul class="formats">
@@ -586,6 +592,7 @@ form.fields .full{grid-column:1/-1}
         <h3>Hortelã-pimenta</h3>
         <p>Fresca e calmante. Boa quente e ainda melhor gelada.</p>
         
+        
       </div>
       <ul class="formats">
         <li>
@@ -619,6 +626,7 @@ form.fields .full{grid-column:1/-1}
         <h3>Laranja</h3>
         <p>A riqueza da alfarroba com a frescura da laranja. Naturalmente doce, com um toque cítrico.</p>
         
+        
       </div>
       <ul class="formats">
         <li>
@@ -644,6 +652,26 @@ form.fields .full{grid-column:1/-1}
             </span>
           </li>
       </ul>
+    </article>
+    <article class="flavor feature" style="--c:var(--f-chai)">
+      <div class="pouch pouch-img"><img src="chai-frente.jpg" alt="Saco Alkarub Chai" width="900" height="1200" loading="lazy"></div>
+      <div class="body">
+        <span class="tag">Novo · Edição especial</span>
+        <h3>Chai</h3>
+        <p>Alfarroba do Algarve com as especiarias da antiga rota da Índia. Um chai quente e aconchegante, naturalmente doce, sem cafeína nem teína e sem açúcar adicionado. Ferva 1 saqueta em 100 ml de água 5 min, junte 200 ml de leite ou bebida vegetal e aqueça.</p>
+        <p class="ingr">Ingredientes: alfarroba* (65%), canela (12%), gengibre (8%), cardamomo (5%), funcho (3%), cravinho (3%), pimenta preta (2%), anis-estrelado (2%). *Alfarroba do Algarve. Contém açúcares naturalmente presentes.</p>
+        
+      </div>
+      <ul class="formats">
+        <li>
+            <span class="fn">30 saquetas (120 g)<span class="fp">8,80&nbsp;€</span></span>
+            <span class="stepper" data-key="chai|chai">
+              <button type="button" data-d="-1" aria-label="Menos Chai 30 saquetas (120 g)" disabled="">−</button>
+              <output>0</output>
+              <button type="button" data-d="1" aria-label="Mais Chai 30 saquetas (120 g)">+</button>
+            </span>
+          </li>
+      </ul>
     </article></div>
     <div class="slow">
       <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M14 6h20M14 42h20M16 6c0 10 16 12 16 18S16 32 16 42M32 6c0 10-16 12-16 18s16 6 16 18"></path></svg>
@@ -654,19 +682,13 @@ form.fields .full{grid-column:1/-1}
 
 <section id="chai" class="chai-teaser">
   <div class="wrap chai-grid">
-    <img src="chai-saqueta.jpg" alt="Saco da Alkarub com o carimbo Chai, edição especial" width="900" height="1200" loading="lazy">
+    <img src="chai-frente.jpg" alt="Saco da Alkarub Chai, edição especial, com 30 saquetas" width="900" height="1200" loading="lazy">
     <div>
-      <span class="eyebrow">Em breve · Novembro 2026</span>
+      <span class="eyebrow">Novo · Edição especial</span>
       <h2>Alkarub Chai.</h2>
       <p>Do Algarve partiram as viagens que abriram o caminho para a Índia. Agora, a alfarroba algarvia encontra as especiarias da Rota das Índias, num chai com 8 ingredientes, feito à mão.</p>
-      <p>Bebe-se com leite de vaca, de outros animais ou vegetal. 30 saquetas de 4 g por 8,80 €. Lançamento em novembro.</p>
-      <form class="chai-form" id="chai-form" novalidate="">
-        <label class="field"><span>O teu e-mail</span><input type="email" name="email" autocomplete="email" required="" placeholder="nome@exemplo.com"></label>
-        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
-        <label class="chai-consent"><input type="checkbox" name="consent" required=""> <span>Aceito receber um e-mail sobre o lançamento do Chai. Detalhes na <a href="privacidade.html">política de privacidade</a>.</span></label>
-        <button class="btn btn-primary" type="submit" style="justify-content:center">Avisem-me quando sair</button>
-        <p class="chai-msg" id="chai-msg" role="status" aria-live="polite"></p>
-      </form>
+      <p>30 saquetas de 4 g por 8,80 €. Bebe-se com leite de vaca, de outros animais ou vegetal.</p>
+      <p><a class="btn btn-primary" href="#produtos">Encomendar o Chai</a></p>
       <p><a href="blog-historia-do-chai.html" class="chai-more">Ler a história do Chai →</a></p>
     </div>
   </div>
@@ -912,7 +934,7 @@ form.fields .full{grid-column:1/-1}
   </div>
 </dialog>
 
-<script type="application/ld+json" id="ld-json">{"@context":"https://schema.org","@graph":[{"@type":["Organization","LocalBusiness"],"@id":"https://www.alkarub.pt/#alkarub","name":"Alkarub","legalName":"Dreamguru, Lda","taxID":"515723070","url":"https://www.alkarub.pt/","logo":"https://www.alkarub.pt/logo.png","image":"https://www.alkarub.pt/logo.png","description":"Infusões de alfarroba feitas à mão no Algarve. Chá de alfarroba sem cafeína nem açúcares adicionados, nos sabores Original, Alecrim, Hortelã-pimenta e Laranja.","email":"info@alkarub.pt","telephone":"+351969000575","address":{"@type":"PostalAddress","streetAddress":"Praia da Salema","postalCode":"8650-196","addressLocality":"Budens","addressRegion":"Algarve","addressCountry":"PT"},"areaServed":["PT","Worldwide"],"sameAs":["https://www.instagram.com/alkarub.pt/","https://www.facebook.com/profile.php?id=61569062279615"],"award":["Finalista do Prémio de Inovação do Algarve na fileira da alfarroba e frutos secos (2026)","2.º lugar na 3.ª edição do Prémio Inovação – Dieta Mediterrânica, XII Feira da Dieta Mediterrânica de Tavira (2026)"],"slogan":"Made in Algarve. 100% feito por humanos.","founder":{"@type":"Person","name":"Joaquim Lourenço"}},{"@type":"WebSite","name":"Alkarub","url":"https://www.alkarub.pt/","inLanguage":"pt-PT","publisher":{"@id":"https://www.alkarub.pt/#alkarub"}},{"@type":"Product","name":"Alkarub Original · Saco 110 g","category":"Infusão de alfarroba","description":"100% alfarroba. Alfarroba pura, seca e moída. Doce, com notas de cacau e rica em antioxidantes. Sem cafeína, sem açúcares adicionados, feito à mão no Algarve.","image":["https://www.alkarub.pt/og-image.png"],"brand":{"@type":"Brand","name":"Alkarub"},"countryOfOrigin":"PT","offers":{"@type":"Offer","price":"3.10","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://www.alkarub.pt/#produtos","seller":{"@id":"https://www.alkarub.pt/#alkarub"}}},{"@type":"Product","name":"Alkarub Original · Saco 220 g","category":"Infusão de alfarroba","description":"100% alfarroba. Alfarroba pura, seca e moída. Doce, com notas de cacau e rica em antioxidantes. Sem cafeína, sem açúcares adicionados, feito à mão no Algarve.","image":["https://www.alkarub.pt/og-image.png"],"brand":{"@type":"Brand","name":"Alkarub"},"countryOfOrigin":"PT","offers":{"@type":"Offer","price":"6.20","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://www.alkarub.pt/#produtos","seller":{"@id":"https://www.alkarub.pt/#alkarub"}}},{"@type":"Product","name":"Alkarub Original · 20 saquetas","category":"Infusão de alfarroba","description":"100% alfarroba. Alfarroba pura, seca e moída. Doce, com notas de cacau e rica em antioxidantes. Sem cafeína, sem açúcares adicionados, feito à mão no Algarve.","image":["https://www.alkarub.pt/og-image.png"],"brand":{"@type":"Brand","name":"Alkarub"},"countryOfOrigin":"PT","offers":{"@type":"Offer","price":"4.50","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://www.alkarub.pt/#produtos","seller":{"@id":"https://www.alkarub.pt/#alkarub"}}},{"@type":"Product","name":"Alkarub Alecrim · Saco 110 g","category":"Infusão de alfarroba","description":"Alfarroba + alecrim. 85% alfarroba, 15% alecrim. O aroma herbal do alecrim com a doçura da alfarroba. Sem cafeína, sem açúcares adicionados, feito à mão no Algarve.","image":["https://www.alkarub.pt/og-image.png"],"brand":{"@type":"Brand","name":"Alkarub"},"countryOfOrigin":"PT","offers":{"@type":"Offer","price":"3.60","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://www.alkarub.pt/#produtos","seller":{"@id":"https://www.alkarub.pt/#alkarub"}}},{"@type":"Product","name":"Alkarub Alecrim · Saco 220 g","category":"Infusão de alfarroba","description":"Alfarroba + alecrim. 85% alfarroba, 15% alecrim. O aroma herbal do alecrim com a doçura da alfarroba. Sem cafeína, sem açúcares adicionados, feito à mão no Algarve.","image":["https://www.alkarub.pt/og-image.png"],"brand":{"@type":"Brand","name":"Alkarub"},"countryOfOrigin":"PT","offers":{"@type":"Offer","price":"8.80","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://www.alkarub.pt/#produtos","seller":{"@id":"https://www.alkarub.pt/#alkarub"}}},{"@type":"Product","name":"Alkarub Alecrim · 20 saquetas","category":"Infusão de alfarroba","description":"Alfarroba + alecrim. 85% alfarroba, 15% alecrim. O aroma herbal do alecrim com a doçura da alfarroba. Sem cafeína, sem açúcares adicionados, feito à mão no Algarve.","image":["https://www.alkarub.pt/og-image.png"],"brand":{"@type":"Brand","name":"Alkarub"},"countryOfOrigin":"PT","offers":{"@type":"Offer","price":"5.30","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://www.alkarub.pt/#produtos","seller":{"@id":"https://www.alkarub.pt/#alkarub"}}},{"@type":"Product","name":"Alkarub Hortelã-pimenta · Saco 110 g","category":"Infusão de alfarroba","description":"Alfarroba + hortelã. Fresca e calmante. Boa quente e ainda melhor gelada. Sem cafeína, sem açúcares adicionados, feito à mão no Algarve.","image":["https://www.alkarub.pt/og-image.png"],"brand":{"@type":"Brand","name":"Alkarub"},"countryOfOrigin":"PT","offers":{"@type":"Offer","price":"3.60","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://www.alkarub.pt/#produtos","seller":{"@id":"https://www.alkarub.pt/#alkarub"}}},{"@type":"Product","name":"Alkarub Hortelã-pimenta · Saco 220 g","category":"Infusão de alfarroba","description":"Alfarroba + hortelã. Fresca e calmante. Boa quente e ainda melhor gelada. Sem cafeína, sem açúcares adicionados, feito à mão no Algarve.","image":["https://www.alkarub.pt/og-image.png"],"brand":{"@type":"Brand","name":"Alkarub"},"countryOfOrigin":"PT","offers":{"@type":"Offer","price":"8.80","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://www.alkarub.pt/#produtos","seller":{"@id":"https://www.alkarub.pt/#alkarub"}}},{"@type":"Product","name":"Alkarub Hortelã-pimenta · 20 saquetas","category":"Infusão de alfarroba","description":"Alfarroba + hortelã. Fresca e calmante. Boa quente e ainda melhor gelada. Sem cafeína, sem açúcares adicionados, feito à mão no Algarve.","image":["https://www.alkarub.pt/og-image.png"],"brand":{"@type":"Brand","name":"Alkarub"},"countryOfOrigin":"PT","offers":{"@type":"Offer","price":"5.30","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://www.alkarub.pt/#produtos","seller":{"@id":"https://www.alkarub.pt/#alkarub"}}},{"@type":"Product","name":"Alkarub Laranja · Saco 110 g","category":"Infusão de alfarroba","description":"Edição especial. A riqueza da alfarroba com a frescura da laranja. Naturalmente doce, com um toque cítrico. Sem cafeína, sem açúcares adicionados, feito à mão no Algarve.","image":["https://www.alkarub.pt/og-image.png"],"brand":{"@type":"Brand","name":"Alkarub"},"countryOfOrigin":"PT","offers":{"@type":"Offer","price":"3.60","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://www.alkarub.pt/#produtos","seller":{"@id":"https://www.alkarub.pt/#alkarub"}}},{"@type":"Product","name":"Alkarub Laranja · Saco 220 g","category":"Infusão de alfarroba","description":"Edição especial. A riqueza da alfarroba com a frescura da laranja. Naturalmente doce, com um toque cítrico. Sem cafeína, sem açúcares adicionados, feito à mão no Algarve.","image":["https://www.alkarub.pt/og-image.png"],"brand":{"@type":"Brand","name":"Alkarub"},"countryOfOrigin":"PT","offers":{"@type":"Offer","price":"8.80","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://www.alkarub.pt/#produtos","seller":{"@id":"https://www.alkarub.pt/#alkarub"}}},{"@type":"Product","name":"Alkarub Laranja · 20 saquetas","category":"Infusão de alfarroba","description":"Edição especial. A riqueza da alfarroba com a frescura da laranja. Naturalmente doce, com um toque cítrico. Sem cafeína, sem açúcares adicionados, feito à mão no Algarve.","image":["https://www.alkarub.pt/og-image.png"],"brand":{"@type":"Brand","name":"Alkarub"},"countryOfOrigin":"PT","offers":{"@type":"Offer","price":"5.30","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://www.alkarub.pt/#produtos","seller":{"@id":"https://www.alkarub.pt/#alkarub"}}},{"@type":"Event","name":"Dia Mundial do Turismo · Alfarroba: Memória(s) de uma Vida","startDate":"2026-09-26","endDate":"2026-09-27","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Fábrica do Inglês, Silves","address":{"@type":"PostalAddress","addressLocality":"Silves","addressCountry":"PT"}},"organizer":{"@type":"Organization","name":"Alkarub","url":"https://www.alkarub.pt/"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Como funciona a encomenda?","acceptedAnswer":{"@type":"Answer","text":"Escolhes os produtos, envias o pedido e respondemos por e-mail a confirmar a disponibilidade e com as instruções de pagamento. Não pagas nada no site."}},{"@type":"Question","name":"Quanto tempo demora?","acceptedAnswer":{"@type":"Answer","text":"A Alkarub é feita em pequenos lotes. Depois de recebermos o pagamento, enviamos pelos CTT em 4 a 5 dias úteis."}},{"@type":"Question","name":"Quanto custam os portes?","acceptedAnswer":{"@type":"Answer","text":"Em Portugal, os portes são de 5 €, grátis a partir de 30 € de compras. Para a Europa, os portes são de 9 €, grátis a partir de 75 € de compras."}},{"@type":"Question","name":"A alfarroba tem benefícios para a saúde?","acceptedAnswer":{"@type":"Answer","text":"A alfarroba é tradicionalmente usada no Mediterrâneo como alimento nutritivo: é rica em fibra e em polifenóis com propriedades antioxidantes, e é uma fonte natural de cálcio, potássio e magnésio. É também naturalmente sem cafeína e sem gluten. Estas são características nutricionais do alimento — a Alkarub não substitui aconselhamento, diagnóstico ou tratamento médico."}},{"@type":"Question","name":"É biológico? Que variedades usam?","acceptedAnswer":{"@type":"Answer","text":"As vagens que usamos têm certificação biológica, e estamos a trabalhar para que o chá Alkarub também venha a ter essa certificação em breve. Usamos as variedades Mulata e Preta de Lagos, endógenas do Algarve, escolhidas pela polpa abundante e pelos açúcares naturais da vagem."}},{"@type":"Question","name":"O que tem cada embalagem?","acceptedAnswer":{"@type":"Answer","text":"O Original é 100% alfarroba. Pode conter vestígios de frutos de casca rija. As saquetas são biodegradáveis e não têm microplástico. Guarda em local fresco e seco."}},{"@type":"Question","name":"Posso devolver?","acceptedAnswer":{"@type":"Answer","text":"Por se tratar de um produto alimentar, só aceitamos devoluções de embalagens por abrir ou com defeito. Escreve-nos para info@alkarub.pt e tratamos do assunto."}}]}]}</script>
+<script type="application/ld+json" id="ld-json">{"@context":"https://schema.org","@graph":[{"@type":["Organization","LocalBusiness"],"@id":"https://www.alkarub.pt/#alkarub","name":"Alkarub","legalName":"Dreamguru, Lda","taxID":"515723070","url":"https://www.alkarub.pt/","logo":"https://www.alkarub.pt/logo.png","image":"https://www.alkarub.pt/logo.png","description":"Infusões de alfarroba feitas à mão no Algarve. Chá de alfarroba sem cafeína nem açúcares adicionados, nos sabores Original, Alecrim, Hortelã-pimenta e Laranja.","email":"info@alkarub.pt","telephone":"+351969000575","address":{"@type":"PostalAddress","streetAddress":"Praia da Salema","postalCode":"8650-196","addressLocality":"Budens","addressRegion":"Algarve","addressCountry":"PT"},"areaServed":["PT","Worldwide"],"sameAs":["https://www.instagram.com/alkarub.pt/","https://www.facebook.com/profile.php?id=61569062279615"],"award":["Finalista do Prémio de Inovação do Algarve na fileira da alfarroba e frutos secos (2026)","2.º lugar na 3.ª edição do Prémio Inovação – Dieta Mediterrânica, XII Feira da Dieta Mediterrânica de Tavira (2026)"],"slogan":"Made in Algarve. 100% feito por humanos.","founder":{"@type":"Person","name":"Joaquim Lourenço"}},{"@type":"WebSite","name":"Alkarub","url":"https://www.alkarub.pt/","inLanguage":"pt-PT","publisher":{"@id":"https://www.alkarub.pt/#alkarub"}},{"@type":"Product","name":"Alkarub Original · Saco 110 g","category":"Infusão de alfarroba","description":"100% alfarroba. Alfarroba pura, seca e moída. Doce, com notas de cacau e rica em antioxidantes. Sem cafeína, sem açúcares adicionados, feito à mão no Algarve.","image":["https://www.alkarub.pt/og-image.png"],"brand":{"@type":"Brand","name":"Alkarub"},"countryOfOrigin":"PT","offers":{"@type":"Offer","price":"3.10","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://www.alkarub.pt/#produtos","seller":{"@id":"https://www.alkarub.pt/#alkarub"}}},{"@type":"Product","name":"Alkarub Original · Saco 220 g","category":"Infusão de alfarroba","description":"100% alfarroba. Alfarroba pura, seca e moída. Doce, com notas de cacau e rica em antioxidantes. Sem cafeína, sem açúcares adicionados, feito à mão no Algarve.","image":["https://www.alkarub.pt/og-image.png"],"brand":{"@type":"Brand","name":"Alkarub"},"countryOfOrigin":"PT","offers":{"@type":"Offer","price":"6.20","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://www.alkarub.pt/#produtos","seller":{"@id":"https://www.alkarub.pt/#alkarub"}}},{"@type":"Product","name":"Alkarub Original · 20 saquetas","category":"Infusão de alfarroba","description":"100% alfarroba. Alfarroba pura, seca e moída. Doce, com notas de cacau e rica em antioxidantes. Sem cafeína, sem açúcares adicionados, feito à mão no Algarve.","image":["https://www.alkarub.pt/og-image.png"],"brand":{"@type":"Brand","name":"Alkarub"},"countryOfOrigin":"PT","offers":{"@type":"Offer","price":"4.50","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://www.alkarub.pt/#produtos","seller":{"@id":"https://www.alkarub.pt/#alkarub"}}},{"@type":"Product","name":"Alkarub Alecrim · Saco 110 g","category":"Infusão de alfarroba","description":"Alfarroba + alecrim. 85% alfarroba, 15% alecrim. O aroma herbal do alecrim com a doçura da alfarroba. Sem cafeína, sem açúcares adicionados, feito à mão no Algarve.","image":["https://www.alkarub.pt/og-image.png"],"brand":{"@type":"Brand","name":"Alkarub"},"countryOfOrigin":"PT","offers":{"@type":"Offer","price":"3.60","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://www.alkarub.pt/#produtos","seller":{"@id":"https://www.alkarub.pt/#alkarub"}}},{"@type":"Product","name":"Alkarub Alecrim · Saco 220 g","category":"Infusão de alfarroba","description":"Alfarroba + alecrim. 85% alfarroba, 15% alecrim. O aroma herbal do alecrim com a doçura da alfarroba. Sem cafeína, sem açúcares adicionados, feito à mão no Algarve.","image":["https://www.alkarub.pt/og-image.png"],"brand":{"@type":"Brand","name":"Alkarub"},"countryOfOrigin":"PT","offers":{"@type":"Offer","price":"8.80","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://www.alkarub.pt/#produtos","seller":{"@id":"https://www.alkarub.pt/#alkarub"}}},{"@type":"Product","name":"Alkarub Alecrim · 20 saquetas","category":"Infusão de alfarroba","description":"Alfarroba + alecrim. 85% alfarroba, 15% alecrim. O aroma herbal do alecrim com a doçura da alfarroba. Sem cafeína, sem açúcares adicionados, feito à mão no Algarve.","image":["https://www.alkarub.pt/og-image.png"],"brand":{"@type":"Brand","name":"Alkarub"},"countryOfOrigin":"PT","offers":{"@type":"Offer","price":"5.30","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://www.alkarub.pt/#produtos","seller":{"@id":"https://www.alkarub.pt/#alkarub"}}},{"@type":"Product","name":"Alkarub Hortelã-pimenta · Saco 110 g","category":"Infusão de alfarroba","description":"Alfarroba + hortelã. Fresca e calmante. Boa quente e ainda melhor gelada. Sem cafeína, sem açúcares adicionados, feito à mão no Algarve.","image":["https://www.alkarub.pt/og-image.png"],"brand":{"@type":"Brand","name":"Alkarub"},"countryOfOrigin":"PT","offers":{"@type":"Offer","price":"3.60","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://www.alkarub.pt/#produtos","seller":{"@id":"https://www.alkarub.pt/#alkarub"}}},{"@type":"Product","name":"Alkarub Hortelã-pimenta · Saco 220 g","category":"Infusão de alfarroba","description":"Alfarroba + hortelã. Fresca e calmante. Boa quente e ainda melhor gelada. Sem cafeína, sem açúcares adicionados, feito à mão no Algarve.","image":["https://www.alkarub.pt/og-image.png"],"brand":{"@type":"Brand","name":"Alkarub"},"countryOfOrigin":"PT","offers":{"@type":"Offer","price":"8.80","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://www.alkarub.pt/#produtos","seller":{"@id":"https://www.alkarub.pt/#alkarub"}}},{"@type":"Product","name":"Alkarub Hortelã-pimenta · 20 saquetas","category":"Infusão de alfarroba","description":"Alfarroba + hortelã. Fresca e calmante. Boa quente e ainda melhor gelada. Sem cafeína, sem açúcares adicionados, feito à mão no Algarve.","image":["https://www.alkarub.pt/og-image.png"],"brand":{"@type":"Brand","name":"Alkarub"},"countryOfOrigin":"PT","offers":{"@type":"Offer","price":"5.30","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://www.alkarub.pt/#produtos","seller":{"@id":"https://www.alkarub.pt/#alkarub"}}},{"@type":"Product","name":"Alkarub Laranja · Saco 110 g","category":"Infusão de alfarroba","description":"Edição especial. A riqueza da alfarroba com a frescura da laranja. Naturalmente doce, com um toque cítrico. Sem cafeína, sem açúcares adicionados, feito à mão no Algarve.","image":["https://www.alkarub.pt/og-image.png"],"brand":{"@type":"Brand","name":"Alkarub"},"countryOfOrigin":"PT","offers":{"@type":"Offer","price":"3.60","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://www.alkarub.pt/#produtos","seller":{"@id":"https://www.alkarub.pt/#alkarub"}}},{"@type":"Product","name":"Alkarub Laranja · Saco 220 g","category":"Infusão de alfarroba","description":"Edição especial. A riqueza da alfarroba com a frescura da laranja. Naturalmente doce, com um toque cítrico. Sem cafeína, sem açúcares adicionados, feito à mão no Algarve.","image":["https://www.alkarub.pt/og-image.png"],"brand":{"@type":"Brand","name":"Alkarub"},"countryOfOrigin":"PT","offers":{"@type":"Offer","price":"8.80","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://www.alkarub.pt/#produtos","seller":{"@id":"https://www.alkarub.pt/#alkarub"}}},{"@type":"Product","name":"Alkarub Laranja · 20 saquetas","category":"Infusão de alfarroba","description":"Edição especial. A riqueza da alfarroba com a frescura da laranja. Naturalmente doce, com um toque cítrico. Sem cafeína, sem açúcares adicionados, feito à mão no Algarve.","image":["https://www.alkarub.pt/og-image.png"],"brand":{"@type":"Brand","name":"Alkarub"},"countryOfOrigin":"PT","offers":{"@type":"Offer","price":"5.30","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://www.alkarub.pt/#produtos","seller":{"@id":"https://www.alkarub.pt/#alkarub"}}},{"@type":"Product","name":"Alkarub Chai · 30 saquetas (120 g)","category":"Infusão de alfarroba","description":"Novo · Edição especial. Alfarroba do Algarve com as especiarias da antiga rota da Índia. Um chai quente e aconchegante, naturalmente doce, sem cafeína nem teína e sem açúcar adicionado. Ferva 1 saqueta em 100 ml de água 5 min, junte 200 ml de leite ou bebida vegetal e aqueça. Sem cafeína, sem açúcares adicionados, feito à mão no Algarve.","image":["https://www.alkarub.pt/chai-frente.jpg"],"brand":{"@type":"Brand","name":"Alkarub"},"countryOfOrigin":"PT","offers":{"@type":"Offer","price":"8.80","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://www.alkarub.pt/#produtos","seller":{"@id":"https://www.alkarub.pt/#alkarub"}}},{"@type":"Event","name":"Dia Mundial do Turismo · Alfarroba: Memória(s) de uma Vida","startDate":"2026-09-26","endDate":"2026-09-27","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Fábrica do Inglês, Silves","address":{"@type":"PostalAddress","addressLocality":"Silves","addressCountry":"PT"}},"organizer":{"@type":"Organization","name":"Alkarub","url":"https://www.alkarub.pt/"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Como funciona a encomenda?","acceptedAnswer":{"@type":"Answer","text":"Escolhes os produtos, envias o pedido e respondemos por e-mail a confirmar a disponibilidade e com as instruções de pagamento. Não pagas nada no site."}},{"@type":"Question","name":"Quanto tempo demora?","acceptedAnswer":{"@type":"Answer","text":"A Alkarub é feita em pequenos lotes. Depois de recebermos o pagamento, enviamos pelos CTT em 4 a 5 dias úteis."}},{"@type":"Question","name":"Quanto custam os portes?","acceptedAnswer":{"@type":"Answer","text":"Em Portugal, os portes são de 5 €, grátis a partir de 30 € de compras. Para a Europa, os portes são de 9 €, grátis a partir de 75 € de compras."}},{"@type":"Question","name":"A alfarroba tem benefícios para a saúde?","acceptedAnswer":{"@type":"Answer","text":"A alfarroba é tradicionalmente usada no Mediterrâneo como alimento nutritivo: é rica em fibra e em polifenóis com propriedades antioxidantes, e é uma fonte natural de cálcio, potássio e magnésio. É também naturalmente sem cafeína e sem gluten. Estas são características nutricionais do alimento — a Alkarub não substitui aconselhamento, diagnóstico ou tratamento médico."}},{"@type":"Question","name":"É biológico? Que variedades usam?","acceptedAnswer":{"@type":"Answer","text":"As vagens que usamos têm certificação biológica, e estamos a trabalhar para que o chá Alkarub também venha a ter essa certificação em breve. Usamos as variedades Mulata e Preta de Lagos, endógenas do Algarve, escolhidas pela polpa abundante e pelos açúcares naturais da vagem."}},{"@type":"Question","name":"O que tem cada embalagem?","acceptedAnswer":{"@type":"Answer","text":"O Original é 100% alfarroba. Pode conter vestígios de frutos de casca rija. As saquetas são biodegradáveis e não têm microplástico. Guarda em local fresco e seco."}},{"@type":"Question","name":"Posso devolver?","acceptedAnswer":{"@type":"Answer","text":"Por se tratar de um produto alimentar, só aceitamos devoluções de embalagens por abrir ou com defeito. Escreve-nos para info@alkarub.pt e tratamos do assunto."}}]}]}</script>
 <script>
 /* ============================================================
    CONFIGURAÇÃO — é só editar esta parte
@@ -932,6 +954,7 @@ const FORMATS = [
   { id:"110", name:"Saco 110 g" },
   { id:"220", name:"Saco 220 g" },
   { id:"tb",  name:"20 saquetas" },
+  { id:"chai", name:"30 saquetas (120 g)", only:true },
 ];
 
 // Preços retirados do site antigo (alkarub.pt). "provisional: true" = preço ainda por confirmar.
@@ -948,6 +971,10 @@ const FLAVORS = [
   { id:"laranja", name:"Laranja", color:"--f-laranja", photo:"p-laranja", tag:"Edição especial",
     desc:"A riqueza da alfarroba com a frescura da laranja. Naturalmente doce, com um toque cítrico.",
     prices:{ "110":3.60, "220":8.80, "tb":5.30 } },
+  { id:"chai", name:"Chai", color:"--f-chai", img:"chai-frente.jpg", tag:"Novo · Edição especial", featured:true, formats:["chai"],
+    desc:"Alfarroba do Algarve com as especiarias da antiga rota da Índia. Um chai quente e aconchegante, naturalmente doce, sem cafeína nem teína e sem açúcar adicionado. Ferva 1 saqueta em 100 ml de água 5 min, junte 200 ml de leite ou bebida vegetal e aqueça.",
+    ingredients:"Ingredientes: alfarroba* (65%), canela (12%), gengibre (8%), cardamomo (5%), funcho (3%), cravinho (3%), pimenta preta (2%), anis-estrelado (2%). *Alfarroba do Algarve. Contém açúcares naturalmente presentes.",
+    prices:{ "chai":8.80 } },
 ];
 
 const EXTRAS = [];   // packs e acessórios: retirados do site
@@ -1015,16 +1042,17 @@ function pouchSVG(){
 }
 function renderFlavors(){
   $("#flavors").innerHTML = FLAVORS.map(f => `
-    <article class="flavor" style="--c:var(${f.color})">
-      ${f.photo ? `<div class="pouch ph ph-${f.photo}" role="img" aria-label="Embalagem Alkarub ${f.name}"></div>` : `<div class="pouch">${pouchSVG()}</div>`}
+    <article class="flavor${f.featured?" feature":""}" style="--c:var(${f.color})">
+      ${f.img ? `<div class="pouch pouch-img"><img src="${f.img}" alt="Saco Alkarub ${f.name}" width="900" height="1200" loading="lazy"></div>` : f.photo ? `<div class="pouch ph ph-${f.photo}" role="img" aria-label="Embalagem Alkarub ${f.name}"></div>` : `<div class="pouch">${pouchSVG()}</div>`}
       <div class="body">
         <span class="tag">${f.tag}</span>
         <h3>${f.name}</h3>
         <p>${f.desc}</p>
+        ${f.ingredients?`<p class="ingr">${f.ingredients}</p>`:""}
         ${f.provisional?`<p style="font-weight:600;color:var(--c)">Preços a confirmar</p>`:""}
       </div>
       <ul class="formats">
-        ${FORMATS.map(fm => {
+        ${FORMATS.filter(fm => f.formats ? f.formats.includes(fm.id) : !fm.only).map(fm => {
           const key = `${f.id}|${fm.id}`;
           return `<li>
             <span class="fn">${fm.name}<span class="fp">${money(f.prices[fm.id])}</span></span>
@@ -1226,10 +1254,10 @@ function renderLD(){
     slogan:"Made in Algarve. 100% feito por humanos.",
     founder:{ "@type":"Person", name:"Joaquim Lourenço" }
   };
-  const products = FLAVORS.flatMap(f => FORMATS.map(fm => ({
+  const products = FLAVORS.flatMap(f => FORMATS.filter(fm => f.formats ? f.formats.includes(fm.id) : !fm.only).map(fm => ({
     "@type":"Product", name:`Alkarub ${f.name} · ${fm.name}`, category:"Infusão de alfarroba",
     description:`${f.tag}. ${f.desc} Sem cafeína, sem açúcares adicionados, feito à mão no Algarve.`,
-    image:["https://www.alkarub.pt/og-image.png"], brand:{ "@type":"Brand", name:"Alkarub" }, countryOfOrigin:"PT",
+    image:[f.img ? "https://www.alkarub.pt/"+f.img : "https://www.alkarub.pt/og-image.png"], brand:{ "@type":"Brand", name:"Alkarub" }, countryOfOrigin:"PT",
     offers:{ "@type":"Offer", price:f.prices[fm.id].toFixed(2), priceCurrency:"EUR", availability:"https://schema.org/InStock", url:SITE+"#produtos", seller:{ "@id":SITE+"#alkarub" } }
   })));
   const events = EVENTS.map(e => ({ "@type":"Event", name:e.nome, startDate:e.inicio, endDate:e.fim||e.inicio,
@@ -1254,13 +1282,5 @@ function renderSocial(){
 
 $("#year").textContent = new Date().getFullYear();
 renderFlavors(); renderConcelhos(); renderEvents(); renderSocial(); renderLD(); update();
-</script>
-<script>
-(function(){var f=document.getElementById("chai-form");if(!f)return;var m=document.getElementById("chai-msg");
-f.addEventListener("submit",function(e){e.preventDefault();m.textContent="";
-var em=f.elements.email.value.trim();if(!em||em.indexOf("@")<1||!f.elements.consent.checked){f.elements.email.reportValidity&&f.elements.email.reportValidity();m.textContent="Escreve um e-mail v\u00e1lido e aceita o consentimento.";return;}
-if(f.elements._gotcha.value){return;}
-var fd=new FormData();fd.append("email",em);fd.append("_subject","Lista de espera Chai");fd.append("lista","Chai");fd.append("consentimento","sim");
-fetch("https://formspree.io/f/xjyybprv",{method:"POST",body:fd,headers:{Accept:"application/json"}}).then(function(r){if(r.ok){f.reset();m.textContent="Obrigado! Avisamos assim que o Chai sair.";}else{m.textContent="N\u00e3o foi poss\u00edvel enviar. Escreve-nos para info@alkarub.pt.";}}).catch(function(){m.textContent="N\u00e3o foi poss\u00edvel enviar. Escreve-nos para info@alkarub.pt.";});});})();
 </script>
 </body></html>
