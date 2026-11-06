@@ -9,6 +9,11 @@
   var p = location.pathname.replace(/\/+$/, "");
   if (p === "/en" || p === "/en/index.html") { location.replace("/en.html" + location.hash); }
   else if (p === "/pt" || p === "/pt/index.html") { location.replace("/" + location.hash); }
+  else {
+    var q = p.toLowerCase(), m = {"/our-story":"/#historia","/shop":"/#produtos","/blog":"/blog.html","/en/blog":"/en-blog.html"};
+    if (m[q]) { location.replace(m[q]); }
+    else if (q.indexOf("/post/") === 0 || q.indexOf("/blog/") === 0) { location.replace("/blog.html"); }
+  }
 })();
 </script>
 <style>
